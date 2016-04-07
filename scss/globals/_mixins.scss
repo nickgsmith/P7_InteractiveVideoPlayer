@@ -1,0 +1,13 @@
+$sm-width: 420px;
+
+@mixin sm {
+  @media (max-width: #{$sm-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$sm-width}) {
+    @content;
+  }
+}
