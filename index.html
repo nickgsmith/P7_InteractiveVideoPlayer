@@ -1,19 +1,209 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>HTML5 Video Demo</title>
 
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Video Player</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700,300' rel='stylesheet' type='text/css'>
-  </head>
+	<link rel="stylesheet" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<script src="js/jquery-1.12.2.min.js"></script>
+</head>
+<body>
+	<div id="video-container">
+		<video id="video">
+		  <source src="videos/video.mp4" type="video/mp4">
+		  <source src="videos/video.ogg" type="video/ogg">
+			<track label="English" kind="captions" srclang="en" src="videos/captions.vtt" default>
+		  <p>
+		    Your browser doesn't support HTML5 video.
+		    <a href="videos/mikethefrog.mp4">Download</a> the video instead.
+		  </p>
+		</video>
+		<div id="video-controls" class="controls">
+			<img id="play-pause" class="control" src="images/play-icon.png"></image>
+			<div id="current" class="control timecounter">00:00</div>
+			<span class="control timecounter">/</span>
+			<div id="duration" class="control timecounter">00:00</div>
+			<img id="fullscreen-icon" class="control float-right" src="images/fullscreen-icon.png"></image>
+			<img id="volume-on-off" class="control float-right" src="images/volume-on-icon.png"></image>
+			<input class="control float-right" type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+			<div class="bar barplaying buffered">
+	  <span id="buffered-amount"></span>
+	</div>
+	<div id="progress-bar" class="bar barplaying progress">
+	  <span id="progress-amount"></span>
+		<!-- <input class="range" type="range" id="seek-bar" value="0"> -->
+	</div>
 
-  <body>
+		</div>
 
-    <div id="container">
+	</div>
+	<div id="captions-container">
+		<p>
+			<span id="caption1">Now that we've looked at the architecture of the internet, let's see how you might </span>
+			<span id="caption2">connect your personal devices to the internet inside your house.</span>
+			<span id="caption3">Well there are many ways to connect to the internet, and</span>
+			<span id="caption4">most often people connect wirelessly.</span>
+			<span id="caption5">Let's look at an example of how you can connect to the internet.</span>
+			<span id="caption6">If you live in a city or a town, you probably have a coaxial cable for</span>
+			<span id="caption7">ccable Internet, or a phone line if you have DSL, running to the outside of</span>
+			<span id="caption8">your house, that connects you to the Internet Service Provider, or ISP.</span>
+		</p>
+		<p>
+			<span id="caption9">If you live far out in the country, you'll more likely have</span>
+			<span id="caption10">a dish outside your house, connecting you wirelessly to your closest ISP, or</span>
+			<span id="caption11">you might also use the telephone system.</span>
+			<span id="caption12">Whether a wire comes straight from the ISP hookup outside your house, or</span>
+			<span id="caption13">it travels over radio waves from your roof,</span>
+			<span id="caption14">the first stop a wire will make once inside your house, is at your modem.</span>
+			<span id="caption15">A modem is what connects the internet to your network at home.</span>
+			<span id="caption16">A few common residential modems are DSL or</span>
+		</p>
+	</div>
+
+	<script src="script.js"></script>
+
+<script>
+
+var myVideo = document.getElementById('video');
+var curtimetext = document.getElementById("current");
+var durtimetext = document.getElementById("duration");
+
+var caption1 = timeString2ms("00:00:00,240")
+var caption2 = timeString2ms("00:00:04,130")
+var caption3 = timeString2ms("00:00:07,535")
+var caption4 = timeString2ms("00:00:11,270")
+var caption5 = timeString2ms("00:00:13,960")
+var caption6 = timeString2ms("00:00:17,940")
+var caption7 = timeString2ms("00:00:22,370")
+var caption8 = timeString2ms("00:00:26,880")
+var caption9 = timeString2ms("00:00:32,100")
+var caption10 = timeString2ms("00:00:34,730")
+var caption11 = timeString2ms("00:00:39,430")
+var caption12 = timeString2ms("00:00:42,350")
+var caption13 = timeString2ms("00:00:46,300")
+var caption14 = timeString2ms("00:00:49,270")
+var caption15 = timeString2ms("00:00:53,760")
+var caption16 = timeString2ms("00:00:57,780")
+
+function timeString2ms(a,b){// time(HH:MM:SS.mss) // optimized
+ return a=a.split(','), // optimized
+  b=a[1]*1||0, // optimized
+  a=a[0].split(':'),
+  (b+(a[2]?a[0]*3600+a[1]*60+a[2]*1:a[1]?a[0]*60+a[1]*1:a[0]*1)*1e3)/1000// optimized
+}
+
+myVideo.addEventListener("timeupdate",seektimeupdate,false);
+
+function seektimeupdate(){
+	var nt = myVideo.currentTime * (100 / myVideo.duration);
+	var curmins = Math.floor(myVideo.currentTime / 60);
+	var cursecs = Math.floor(myVideo.currentTime - curmins * 60);
+	var durmins = Math.floor(myVideo.duration / 60);
+	var dursecs = Math.floor(myVideo.duration - durmins * 60);
+	if(cursecs < 10){ cursecs = "0"+cursecs; }
+	if(dursecs < 10){ dursecs = "0"+dursecs; }
+	if(curmins < 10){ curmins = "0"+curmins; }
+	if(durmins < 10){ durmins = "0"+durmins; }
+	curtimetext.innerHTML = curmins+":"+cursecs;
+	durtimetext.innerHTML = durmins+":"+dursecs;
+	$("#captions-container").find('span').css("color", "#444")
+	if (myVideo.currentTime >= caption1) {
+		$("#caption1").css("transition", "0.5s")
+		$("#caption1").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption2) {
+		$("#caption2").css("transition", "0.5s")
+		$("#caption2").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption3) {
+		$("#caption3").css("transition", "0.5s")
+		$("#caption3").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption4) {
+		$("#caption4").css("transition", "0.5s")
+		$("#caption4").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption5) {
+		$("#caption5").css("transition", "0.5s")
+		$("#caption5").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption6) {
+		$("#caption6").css("transition", "0.5s")
+		$("#caption6").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption7) {
+		$("#caption7").css("transition", "0.5s")
+		$("#caption7").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption8) {
+		$("#caption8").css("transition", "0.5s")
+		$("#caption8").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption9) {
+		$("#caption9").css("transition", "0.5s")
+		$("#caption9").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption10) {
+		$("#caption10").css("transition", "0.5s")
+		$("#caption10").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption11) {
+		$("#caption11").css("transition", "0.5s")
+		$("#caption11").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption12) {
+		$("#caption12").css("transition", "0.5s")
+		$("#caption12").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption13) {
+		$("#caption13").css("transition", "0.5s")
+		$("#caption13").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption14) {
+		$("#caption14").css("transition", "0.5s")
+		$("#caption14").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption15) {
+		$("#caption15").css("transition", "0.5s")
+		$("#caption15").css("color", "#FF9900")
+	}
+	if (myVideo.currentTime >= caption16) {
+		$("#caption16").css("transition", "0.5s")
+		$("#caption16").css("color", "#FF9900")
+	}
+}
 
 
-    </div> <!-- container -->
-  </body>
+myVideo.addEventListener('progress', function() {
+	var bufferedEnd = myVideo.buffered.end(myVideo.buffered.length - 1);
+	var duration =  myVideo.duration;
+	if (duration > 0) {
+		document.getElementById('buffered-amount').style.width = ((bufferedEnd / duration)*100) + "%";
+	}
+});
+
+myVideo.addEventListener('timeupdate', function() {
+	var duration =  myVideo.duration;
+	if (duration > 0) {
+		document.getElementById('progress-amount').style.width = ((myVideo.currentTime / duration)*100) + "%";
+	}
+});
+
+
+var player = document.querySelector("video");
+var progressBar = document.getElementById("progress-bar");
+progressBar.addEventListener("click", seek);
+
+function seek(e) {
+    var percent = e.offsetX / this.offsetWidth;
+    player.currentTime = percent * player.duration;
+    progressBar.value = percent / 100;
+}
+
+</script>
+
+
+
+</body>
 </html>

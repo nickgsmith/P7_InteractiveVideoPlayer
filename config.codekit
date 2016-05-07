@@ -2,66 +2,75 @@
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
 "creatorBuild": "19115",
 "files": {
-	"\/css\/styles.css": {
+	"\/css\/style.css": {
 		"fileType": 16,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/styles.css",
+		"inputAbbreviatedPath": "\/css\/style.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/icons\/fullscreen-icon.png": {
+	"\/css\/styles.old.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/styles.old.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/images\/fullscreen-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 334,
-		"inputAbbreviatedPath": "\/icons\/fullscreen-icon.png",
-		"outputAbbreviatedPath": "\/icons\/fullscreen-icon.png",
+		"inputAbbreviatedPath": "\/images\/fullscreen-icon.png",
+		"outputAbbreviatedPath": "\/images\/fullscreen-icon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/icons\/pause-icon.png": {
+	"\/images\/pause-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 243,
-		"inputAbbreviatedPath": "\/icons\/pause-icon.png",
-		"outputAbbreviatedPath": "\/icons\/pause-icon.png",
+		"inputAbbreviatedPath": "\/images\/pause-icon.png",
+		"outputAbbreviatedPath": "\/images\/pause-icon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/icons\/play-icon.png": {
+	"\/images\/play-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 381,
-		"inputAbbreviatedPath": "\/icons\/play-icon.png",
-		"outputAbbreviatedPath": "\/icons\/play-icon.png",
+		"inputAbbreviatedPath": "\/images\/play-icon.png",
+		"outputAbbreviatedPath": "\/images\/play-icon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/icons\/volume-off-icon.png": {
+	"\/images\/volume-off-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 701,
-		"inputAbbreviatedPath": "\/icons\/volume-off-icon.png",
-		"outputAbbreviatedPath": "\/icons\/volume-off-icon.png",
+		"inputAbbreviatedPath": "\/images\/volume-off-icon.png",
+		"outputAbbreviatedPath": "\/images\/volume-off-icon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/icons\/volume-on-icon.png": {
+	"\/images\/volume-on-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 534,
-		"inputAbbreviatedPath": "\/icons\/volume-on-icon.png",
-		"outputAbbreviatedPath": "\/icons\/volume-on-icon.png",
+		"inputAbbreviatedPath": "\/images\/volume-on-icon.png",
+		"outputAbbreviatedPath": "\/images\/volume-on-icon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -74,6 +83,81 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/index.old.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/index.old.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/js\/jquery-1.12.2.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/jquery-1.12.2.min.js",
+		"outputAbbreviatedPath": "\/js\/min\/jquery-1.12.2.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/min\/script-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/script-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/script-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/mockups\/hover.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 885924,
+		"inputAbbreviatedPath": "\/mockups\/hover.png",
+		"outputAbbreviatedPath": "\/mockups\/hover.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/mockups\/paused.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 886694,
+		"inputAbbreviatedPath": "\/mockups\/paused.png",
+		"outputAbbreviatedPath": "\/mockups\/paused.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/mockups\/playing.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 890318,
+		"inputAbbreviatedPath": "\/mockups\/playing.png",
+		"outputAbbreviatedPath": "\/mockups\/playing.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/script.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/script.js",
+		"outputAbbreviatedPath": "\/min\/script-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/scss\/globals\/_globals.scss": {
 		"createSourceMap": 0,
@@ -139,15 +223,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/scss\/styles.scss": {
+	"\/scss\/style.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/scss\/styles.scss",
-		"outputAbbreviatedPath": "\/css\/styles.css",
+		"inputAbbreviatedPath": "\/scss\/style.scss",
+		"outputAbbreviatedPath": "\/css\/style.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
