@@ -1,10 +1,16 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
 #video-container {
-  position: relative;
-  margin: 0; }
+  position: relative; }
 
 video {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+  display: block;
+  margin: 0 auto; }
 
 #video-controls {
   position: absolute;
@@ -13,6 +19,8 @@ video {
   bottom: 0;
   left: 0;
   right: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 5px;
   -webkit-transition: opacity .3s;
   -moz-transition: opacity .3s;
@@ -114,7 +122,10 @@ video {
   font-family: "Open Sans";
   color: #444;
   width: 95%;
-  margin-left: 10px; }
+  margin: 40px auto;
+  text-align: justify; }
+  #captions-container p {
+    margin-top: 30px; }
 
 #progress-bar:hover {
   cursor: pointer; }
